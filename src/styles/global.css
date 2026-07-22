@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+
+/* Animazione fluida, ampia e graduale */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+    filter: blur(4px); /* Leggero sfocato iniziale per accentuare la sensazione di morbidezza */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Durata a 2.6s con la curva 'ease-out' d'ispirazione naturale */
+.hero-animate {
+  animation: heroFadeIn 2.6s cubic-bezier(0.12, 0.8, 0.22, 1) forwards;
+}
+
+/* Intervalli di quasi un secondo per un ritmo rilassato */
+.delay-1 { animation-delay: 300ms; }
+.delay-2 { animation-delay: 800ms; }
+.delay-3 { animation-delay: 1300ms; }
+.delay-4 { animation-delay: 1800ms; }

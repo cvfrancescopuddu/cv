@@ -1,0 +1,29 @@
+---
+const skills = [
+  { name: "JavaScript", icon: "/img/javascript.svg" },
+  { name: "PostgreSQL", icon: "/img/postgresql-icon.svg" },
+  { name: "MySQL", icon: "/img/mysql.svg" },
+  { name: "Ionic", icon: "/img/ionic.png" },
+  { name: "TypeScript", icon: "/img/typescriptlang-icon.svg" },
+  { name: "Vue.js", icon: "/img/vuejs-icon.svg" },
+  { name: "Nuxt.js", icon: "/img/nuxtjs-icon.svg" },
+  { name: "Java", icon: "/img/java-icon.svg" },
+
+];
+---
+
+<section id="skills" class="py-20" reveal-on-scroll>
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold text-white mb-12">Competenze Tecniche</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+      {skills.map((skill) => (
+        <div class="p-6 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-teal-500/50 hover:bg-slate-800/50 transition-all flex flex-col items-center group">
+          <div class="w-16 h-16 mb-4 flex items-center justify-center p-3 rounded-2xl bg-slate-800/80 group-hover:scale-110 transition-transform">
+            <img src={skill.icon} alt={skill.name} class="w-full h-full object-contain" />
+          </div>
+          <span class="font-medium text-slate-200">{skill.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

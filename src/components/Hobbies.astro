@@ -1,0 +1,51 @@
+---
+const highlights = [
+  {
+    title: "Arti Marziali",
+    subtitle: "Disciplina e Costanza",
+    description: "Pratico arti marziali fin dall'infanzia. Mi hanno insegnato il valore della disciplina, della gestione dello stress e del miglioramento continuo (Kaizen)."
+  },
+  {
+    title: "Lettura & Saggistica",
+    subtitle: "Curiosità e Apprendimento",
+    description: "Lettore assiduo di saggi tecnologici, scientifici e di crescita personale. Cerco sempre nuove prospettive per comprendere problemi complessi."
+  },
+  {
+    title: "Natura & Trekking",
+    subtitle: "Problem Solving & Focus",
+    description: "Cresciuto al centro della Sardegna, amo esplorare la natura. Camminare all'aperto è il mio modo per ricaricare la mente e mantenere chiarezza di pensiero."
+  },
+  {
+    title: "Confronto & Community",
+    subtitle: "Lavoro di Squadra",
+    description: "Amo confrontarmi con altre persone, scambiare idee e collaborare. Considero il feedback costruttivo la leva principale di crescita professionale."
+  }
+];
+---
+
+<section id="hobbies" class="py-20 bg-slate-900/30 border-t border-slate-800/50 " >
+  <div class="max-w-5xl mx-auto px-4">
+    <div class="mb-12">
+      <span class="text-xs font-semibold uppercase tracking-wider text-teal-400">Oltre il codice</span>
+      <h2 class="text-3xl font-bold text-white mt-1">Valori Personali & Interessi</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {highlights.map((item) => (
+        <div class="p-6 rounded-2xl bg-slate-900/60 border border-slate-800/80 hover:border-slate-700 transition-all flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="text-lg font-semibold text-white">{item.title}</h3>
+              <span class="text-xs px-2.5 py-1 rounded-full bg-slate-800 text-teal-400 font-medium border border-slate-700/50">
+                {item.subtitle}
+              </span>
+            </div>
+            <p class="text-sm text-slate-300 leading-relaxed font-light">
+              {item.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

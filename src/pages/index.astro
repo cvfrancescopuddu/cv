@@ -1,0 +1,43 @@
+---
+
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import ContactCard from '../components/ContactCard.astro';
+import Skills from '../components/Skills.astro';
+import Hobbies from '../components/Hobbies.astro';
+import Layout from '../layouts/Layout.astro';
+
+const contacts = [
+  { title: "Email", value: "interprisegroup2024@gmail.com", href: "mailto:interprisegroup2024@gmail.com" },
+//   { title: "Telefono", value: "+39 345 897 3559", href: "tel:+393458973559" },
+  { title: "LinkedIn", value: "Profilo LinkedIn", href: "https://www.linkedin.com/in/francesco-puddu-98ba851a2" },
+  { title: "GitHub", value: "Profilo GitHub", href: "https://github.com/cvfrancescopuddu" },
+];
+---
+
+<Layout title="Francesco Puddu | Curriculum Vitae">
+  <Navbar />
+  <main>
+    <Hero />
+    <About />
+    
+    <!-- Sezione Contatti & Istruzione -->
+    <section id="contatti" class="py-20 max-w-5xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-white mb-8">Contatti & Formazione</h2>
+      
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+        {contacts.map((c) => (
+          <ContactCard title={c.title} value={c.value} href={c.href} />
+        ))}
+      </div>
+    </section>
+
+    <Skills />
+    <Hobbies />
+  </main>
+
+  <footer class="py-8 border-t border-slate-800/80 text-center text-slate-500 text-sm">
+    <p>&copy; {new Date().getFullYear()} Francesco Puddu. Sviluppato con Astro & Tailwind CSS.</p>
+  </footer>
+</Layout>
